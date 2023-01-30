@@ -15,5 +15,19 @@ const nthTribonacciNumber = (num) => {
   return c;
 };
 
-const res = nthTribonacciNumber(4);
+const res = nthTribonacciNumber(18);
 console.log(res);
+
+const nthTribonacciNumberRecursion = (num) => {
+  if (num === 0) return 0;
+  if (num === 1 || num === 2) return 1;
+
+  return (
+    nthTribonacciNumberRecursion(num - 1) +
+    nthTribonacciNumberRecursion(num - 2) +
+    nthTribonacciNumberRecursion(num - 3)
+  );
+};
+
+const resRecursion = nthTribonacciNumberRecursion(18);
+console.log(resRecursion);
