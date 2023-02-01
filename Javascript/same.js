@@ -1,9 +1,3 @@
-// [1,2,3,4], [4,1,9,16] -> true
-// [1,2,1], [4,1,1] -> true
-// [2,4,3] , [1,4,8] -> false
-// [1,2,3], [4,9]-> false
-// [1,2,1], [4,4,1]-> false
-
 const same = (arr1, arr2) => {
   if (arr1.length !== arr2.length) return false;
   for (let i = 0; i < arr1.length; i++) {
