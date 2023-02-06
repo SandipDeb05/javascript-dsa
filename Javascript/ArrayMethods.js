@@ -1,4 +1,4 @@
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "1"];
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // const array = [1, 3, 5, 7, 9];
 
 // TODO .length
@@ -28,7 +28,8 @@ array.forEach((item, i) => console.log(i, item));
 for (let item of array.keys()) {
   console.log(item);
 }
-// TODO .toLocalString()
+
+// BUG .toLocalString()
 let resultArray = array.toLocaleString("en-US", {
   style: "currency",
   currency: "USD",
@@ -39,7 +40,7 @@ console.log(resultArray);
 console.log(array.pop());
 console.log(array);
 // TODO shift()
-console.log(array.shift());
+console.log("shift", array.shift());
 console.log(array);
 // TODO push()
 array.push(999);
