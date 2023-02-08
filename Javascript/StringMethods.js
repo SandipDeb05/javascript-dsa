@@ -50,3 +50,23 @@ console.log(str10.charAt(4)); // o
 // TODO str.charCodeAt(index) -> The charCodeAt() method returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index.
 const str11 = "result pending";
 console.log(str11.charCodeAt(2)); // s -> 115
+
+// TODO String.fromCharCode(num1, ..., numN) -> The fromCharCode() method returns a string created from the specified sequence of UTF-16 code units.
+const str12 = String.fromCharCode(115, 120, 106);
+console.log(str12);
+
+// TODO str.substring(indexStart, indexEnd) -> The substring() method returns a specified part of the string between start and end indexes.
+const str13 = "this is a simple text";
+console.log(str13.substring(0, 5));
+
+// TODO str.padStart(targetLength, padString) -> The padStart() method pads the current string with another string to the start.
+const str14 = "sleep";
+console.log(str14.padStart(10, "$"));
+
+// TODO str.padEnd(targetLength, padString)-> The padEnd() method pads the current string with another string to the end.
+const str15 = "code";
+console.log(str15.padEnd(10, "*"));
+
+// TODO str.codePointAt(pos) -> The codePointAt() method returns an integer that denotes the Unicode point value of a character in the string.
+const str16 = "sandip";
+console.log(str16.codePointAt(0)); // s -> 115
