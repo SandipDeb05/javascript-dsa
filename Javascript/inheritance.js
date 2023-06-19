@@ -62,8 +62,8 @@ Animal.prototype.printName = function () {
 const dog = new Animal("buddy");
 const cat = new Animal("milly");
 
-dog.printName();
-cat.printName();
+// dog.printName();
+// cat.printName();
 
 function Cat(name, eat) {
   Animal.call(this, name);
@@ -72,5 +72,29 @@ function Cat(name, eat) {
 Cat.prototype = Object.create(Animal.prototype);
 
 const kitten = new Cat("julia", "cat food");
-console.log(kitten);
-kitten.printName();
+// console.log(kitten);
+// kitten.printName();
+
+class Teacher {
+  constructor(name, age, subject) {
+    this.name = name;
+    this.age = age;
+    this.subject = subject;
+  }
+  printDetails() {
+    console.log(this.name, this.age, this.subject);
+  }
+}
+
+class Principal extends Teacher {
+  constructor(name, age, subject, level) {
+    super(name, age, subject);
+    this.level = level;
+  }
+}
+
+const sanjeev = new Teacher("Sanjeev", 34, "Maths");
+const ranveer = new Principal("Ranveer", 54, "All");
+
+// console.log(ranveer);
+// ranveer.printDetails();
