@@ -8,9 +8,60 @@ function math() {
 
 const sum = math();
 
-console.log(sum(5));
+// console.log(sum(20));
 
-const abc = () => {
-  console.log(this);
-};
-abc();
+// uses of closure
+function heavyDuty() {
+  const heavyTask = Array(1000).fill(5);
+
+  return function (index) {
+    return heavyTask[index];
+  };
+}
+
+const eff = heavyDuty();
+
+// console.log(eff(20));
+
+let view;
+
+function init() {
+  let called = 0;
+  return function () {
+    if (called > 0) {
+      return;
+    } else {
+      view = "Hello world";
+      console.log("view sent");
+      called++;
+    }
+  };
+}
+
+const once = init();
+// once();
+// once();
+// once();
+
+// FIXME
+for (var i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 0);
+}
+
+// TODO
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 0);
+}
+
+// TODO
+for (var i = 0; i < 5; i++) {
+  (function (j) {
+    setTimeout(() => {
+      console.log(j);
+    }, 0);
+  })(i);
+}
