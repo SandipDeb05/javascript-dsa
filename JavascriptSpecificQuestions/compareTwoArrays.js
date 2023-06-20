@@ -19,6 +19,7 @@ function isEqualArray(arr1, arr2) {
 function customIsEqualArray(arr1, arr2) {
   if (!arr1 || !arr2) return false;
   if (arr1.length !== arr2.length) return false;
+  if (arr1 === arr2) return trur;
 
   let result;
 
