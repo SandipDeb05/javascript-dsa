@@ -52,6 +52,54 @@ class BinarySearchTree {
     }
     return false;
   }
+  // O(n)
+  bfs() {
+    const queue = [];
+    const visited = [];
+    let node = this.root;
+    if (!node) return null;
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      visited.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return visited;
+  }
+  // O(n)
+  dfsPreOrder() {
+    const visited = [];
+    function traverse(node) {
+      visited.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return visited;
+  }
+  // O(n)
+  dfsPostOrder() {
+    const visited = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      visited.push(node.value);
+    }
+    traverse(this.root);
+    return visited;
+  }
+  // O(n)
+  dfsInOrder() {
+    const visited = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      visited.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return visited;
+  }
 }
 
 let tree = new BinarySearchTree();
@@ -65,13 +113,16 @@ let tree = new BinarySearchTree();
 // tree.root.right.right = new Node(20);
 
 tree.insert(10);
+tree.insert(6);
+tree.insert(15);
+tree.insert(3);
+tree.insert(8);
 tree.insert(20);
-tree.insert(30);
-tree.insert(25);
-tree.insert(25);
-tree.insert(26);
-tree.insert(5);
+tree.insert(13);
 
-console.log(tree.contains(51));
+// console.log(tree.contains(51));
 
+console.log(tree.dfsPreOrder());
+console.log(tree.dfsPostOrder());
+console.log(tree.dfsInOrder());
 console.log(tree);
